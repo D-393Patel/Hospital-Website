@@ -1,0 +1,600 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 90%;
+}
+
+body {
+  font-family: "Kanit", serif;
+  line-height: 1.5;
+  color: #242124;
+  background: rgba(0, 255, 255, 0.1);
+  user-select: none;
+}
+
+.container {
+  width: 82%;
+  margin: 0 auto;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+h1, h2, h3, h4, h5 {
+  line-height: 1.2;
+}
+
+section {
+  margin-top: 6rem;
+}
+section > h2 {
+  text-align: center;
+}
+section > p {
+  text-align: center;
+  width: 42%;
+  margin: 0.6rem auto 2.3rem;
+}
+
+.btn {
+  display: inline-block;
+  width: fit-content;
+  padding: 0.7rem 1rem;
+  border-radius: 0.4rem;
+  background: #FF004F;
+  color: #F0FFFF;
+  cursor: pointer;
+  transition: all 400ms ease;
+}
+.btn:hover {
+  background: #ff296b;
+  box-shadow: 0 1rem 1.6rem rgba(48, 25, 52, 0.15);
+}
+
+.btn-primary {
+  display: inline-block;
+  width: fit-content;
+  padding: 0.7rem 1rem;
+  border-radius: 0.4rem;
+  background: #003262;
+  color: #F0FFFF;
+  cursor: pointer;
+  transition: all 400ms ease;
+}
+.btn-primary:hover {
+  background: #00478b;
+  box-shadow: 0 1rem 1.6rem rgba(48, 25, 52, 0.15);
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    width: 90%;
+  }
+  .section > p {
+    width: 55%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .section > p {
+    width: 90%;
+  }
+}
+nav {
+  width: 100vw;
+  height: 5rem;
+  position: fixed;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #003262, cyan);
+  color: #F0FFFF;
+  box-shadow: 0 1rem 1rem rgba(48, 25, 52, 0.1);
+}
+nav h1, nav h2, nav h3, nav h4, nav h5 {
+  color: #F0FFFF;
+}
+nav.window-scroll {
+  background: #F0FFFF;
+}
+nav.window-scroll .container button {
+  color: #301934;
+}
+nav.window-scroll .container a {
+  color: #301934;
+}
+nav.window-scroll .container a > h3 {
+  color: #301934;
+}
+nav.window-scroll .container a.btn {
+  color: #F0FFFF;
+}
+nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 33rem;
+}
+nav .container ul {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+nav .container ul li a {
+  position: relative;
+}
+nav .container ul li a::before a:hover {
+  content: "";
+  width: 1rem;
+  height: 0.2rem;
+  color: rgb(143, 188, 186);
+  border-radius: 1rem;
+  position: absolute;
+  top: 1.1rem;
+}
+nav .container button {
+  display: none;
+}
+nav .container a {
+  color: #F0FFFF;
+  font-weight: 400;
+  font-size: 1rem;
+}
+nav .container .nav_logo h3 {
+  color: #F0FFFF;
+}
+
+@media screen and (max-width: 1024px) {
+  nav.window.scroll .container a {
+    color: #F0FFFF;
+  }
+  nav .container {
+    gap: 0;
+  }
+  nav .container button {
+    display: inline-block;
+    background: transparent;
+    color: #F0FFFF;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  nav .container button#close_nav-btn {
+    display: none;
+  }
+  nav .container ul {
+    position: fixed;
+    right: 5%;
+    top: 5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    display: none;
+    perspective: 300px;
+  }
+  nav .container ul li {
+    width: 100%;
+    opacity: 0;
+    animation: flipNavItem 390ms ease forwards;
+    transform-origin: top;
+  }
+  nav .container ul li:nth-child(2) {
+    animation-delay: 200ms;
+  }
+  nav .container ul li:nth-child(3) {
+    animation-delay: 400ms;
+  }
+  nav .container ul li:nth-child(4) {
+    animation-delay: 600ms;
+  }
+  nav .container ul li:nth-child(5) {
+    animation-delay: 800ms;
+  }
+  @keyframes flipNavItem {
+    0% {
+      transform: rotateX(120deg);
+    }
+    100% {
+      transform: rotateX(0deg);
+      opacity: 1;
+    }
+  }
+  nav .container ul li a {
+    color: #F0FFFF;
+    height: 100%;
+    display: block;
+    padding: 1.5rem 3rem;
+    border-radius: 0;
+    background: linear-gradient(cyan, #008f8f);
+  }
+  nav .container ul li a.btn {
+    background: #FF004F;
+  }
+}
+header {
+  background: linear-gradient(135deg, #003262, cyan);
+  color: #F0FFFF;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+header h1, header h2, header h3, header h4, header h5 {
+  color: #F0FFFF;
+}
+header .container {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: 46% 46%;
+  gap: 8%;
+  align-items: center;
+  justify-content: space-between;
+}
+header .container .header_content h1 {
+  font-size: 3rem;
+  font-weight: 550;
+  line-height: 1.1;
+  letter-spacing: -3px;
+  word-spacing: 0.4rem;
+}
+header .container .header_content p {
+  margin: 1rem 0 2rem;
+  color: #FFE4E1;
+}
+
+@media screen and (max-width: 1024px) {
+  header {
+    height: 60vh;
+  }
+  header .container {
+    gap: 3rem;
+  }
+  header .container .header_content h1 {
+    font-size: 2.2rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  header {
+    height: 100vh;
+    padding-top: 3rem;
+  }
+  header .container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+#Services h2 {
+  font-size: 3rem;
+}
+#Services p {
+  color: rgb(153, 151, 151);
+}
+#Services .container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+#Services .container article {
+  background: linear-gradient(135deg, #003262, cyan);
+  color: #F0FFFF;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  height: fit-content;
+  transition: all 400ms ease;
+}
+#Services .container article h1, #Services .container article h2, #Services .container article h3, #Services .container article h4, #Services .container article h5 {
+  color: #F0FFFF;
+}
+#Services .container article:hover {
+  margin-top: -0.5rem;
+}
+#Services .container article i {
+  font-size: 1.7rem;
+}
+#Services .container article div h4 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width: 1024px) {
+  #Services .container {
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+  }
+  #Services article {
+    padding: 1.2rem;
+    gap: 0.8rem;
+  }
+  #Services article:hover {
+    margin: 0;
+  }
+}
+@media screen and (max-width: 600px) {
+  #Services .container {
+    grid-template-columns: 1fr;
+  }
+}
+#Specialists .container {
+  width: 68%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+#Specialists .container article {
+  background: #F0FFFF;
+  border-radius: 1rem;
+  box-shadow: 0 1.5rem 1.5rem rgba(48, 25, 52, 0.1);
+  position: relative;
+  transition: all 700ms ease;
+}
+#Specialists .container article:hover {
+  box-shadow: none;
+}
+#Specialists .container article:hover .specialist_image::before {
+  right: 0%;
+  border-radius: 1rem;
+}
+#Specialists .container article:hover .specialist_socials, #Specialists .container article:hover .specialist_whatsapp {
+  opacity: 1;
+  visibility: visible;
+}
+#Specialists .container article .specialist_image {
+  height: 20rem;
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+#Specialists .container article .specialist_image::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: -100%;
+  top: 0%;
+  background: linear-gradient(135deg, rgba(0, 50, 98, 0.8), rgba(0, 255, 255, 0.8));
+  border-radius: 50%;
+  transition: all 1s ease;
+}
+#Specialists .container article .specialist_details {
+  margin: 1.5rem 0;
+  text-align: center;
+}
+#Specialists .container article .specialist_socials {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 1s 400ms ease;
+}
+#Specialists .container article a {
+  background: #F0FFFF;
+  color: #003262;
+  padding: 0.4rem;
+  display: flex;
+  font-size: 0.8rem;
+  border-radius: 50%;
+  transition: all 400ms ease;
+}
+#Specialists .container article a:hover {
+  background: #003262;
+  color: #F0FFFF;
+}
+#Specialists .container article .specialist_whatsapp {
+  background: #00FF7F;
+  color: #F0FFFF;
+  font-size: 1.2rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 30%;
+  padding: 1rem;
+  border-radius: 50%;
+  display: flex;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 1s 400ms ease;
+}
+
+@media screen and (max-width: 1024px) {
+  #Specialists .container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (max-width: 600px) {
+  #Specialists .container {
+    grid-template-columns: 1fr;
+  }
+}
+.swiper {
+  width: 82%;
+}
+.swiper .swiper-wrapper {
+  margin-bottom: 4rem;
+}
+.swiper .swiper-wrapper article {
+  background: linear-gradient(135deg, #003262, cyan);
+  color: #F0FFFF;
+  padding: 1.5rem 2rem;
+  border-radius: 1rem;
+  font-size: 0.9rem;
+  cursor: default;
+}
+.swiper .swiper-wrapper article h1, .swiper .swiper-wrapper article h2, .swiper .swiper-wrapper article h3, .swiper .swiper-wrapper article h4, .swiper .swiper-wrapper article h5 {
+  color: #F0FFFF;
+}
+.swiper .swiper-wrapper article p {
+  margin-bottom: 1.5rem;
+}
+.swiper .swiper-wrapper article .patient {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.swiper .swiper-wrapper article .patient .avatar {
+  width: 2.5rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.swiper .swiper-pagination-bullet {
+  background: #003262;
+}
+
+@media screen and (max-width: 600px) {
+  .swiper .swiper-wrapper .swiper-slide {
+    padding: 1.5rem;
+  }
+}
+#Appointments .container {
+  display: grid;
+  grid-template-columns: 47% 47%;
+  gap: 6%;
+}
+#Appointments .container .info p {
+  margin: 0.5rem 0 2rem;
+}
+#Appointments .container .info article {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+#Appointments .container .info article small {
+  margin-top: 0.4rem;
+  display: block;
+}
+#Appointments .container .info article .info_icon {
+  background: #FF004F;
+  color: #F0FFFF;
+  padding: 0.4rem;
+  border-radius: 50%;
+  display: flex;
+  height: fit-content;
+  font-size: 1.2rem;
+}
+#Appointments .container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+#Appointments .container form .form_group label {
+  font-size: 0.85rem;
+  margin-bottom: 0.4rem;
+  display: inline-block;
+  font-weight: 600;
+}
+#Appointments .container form .form_group input,
+#Appointments .container form .form_group textarea,
+#Appointments .container form .form_group select {
+  background-color: #F0FFFF;
+  padding: 0.85rem 1rem;
+  display: block;
+  width: 100%;
+  border-radius: 0.4rem;
+  resize: none;
+  appearance: none;
+}
+
+@media screen and (max-width: 1024px) {
+  #Appointments .container {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+  #Appointments .container .info {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 600px) {
+  #Appointments .container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  #Appointments .container .info {
+    text-align: center;
+  }
+}
+footer {
+  background: #301934;
+  color: #FFE4E1;
+  padding-left: 2rem;
+  padding-top: 6rem;
+  margin-top: 6rem;
+}
+footer .container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5rem;
+  font-size: 0.95rem;
+}
+footer .container a {
+  color: #FFE4E1;
+  transition: all 400ms ease;
+}
+footer .container a:hover {
+  color: #F0FFFF;
+}
+footer .container a > h3 {
+  color: #F0FFFF;
+}
+footer .container article {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+footer .container article > div {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+footer .container article > h3 {
+  color: #F0FFFF;
+}
+footer .container article .footer_socials {
+  gap: 1rem;
+  font-size: 1.1rem;
+}
+footer .copyright {
+  margin-left: 0;
+  text-align: center;
+  padding: 1.5rem 0;
+  margin-top: 4rem;
+  font-size: 1.5rem;
+  border-top: 1px solid rgba(240, 255, 255, 0.2);
+}
+
+@media screen and (max-width: 1024px) {
+  footer .container {
+    gap: 2.5rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  footer .container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  footer .container .btn-primary, footer .container .footer_socials {
+    margin: 0 auto;
+  }
+  footer .container article {
+    text-align: center;
+  }
+  footer .container article > div {
+    justify-content: center;
+  }
+}
